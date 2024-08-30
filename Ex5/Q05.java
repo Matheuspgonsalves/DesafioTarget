@@ -3,12 +3,14 @@ public class Q05 {
         //Variaveis
         String str;
 
+        //Leitura do teclado
         str = MyIO.readLine();
 
-        String newString = inverteString(str);
+        //Funcao que vaai inverter a string e mostrar a saida na tela
+        inverteString(str);
     }
 
-    public static String inverteString(String str){
+    public static void inverteString(String str){
         int tamStr = str.length() - 1;
         char[] vetorString = new char[tamStr + 1];
         char aux;
@@ -18,20 +20,13 @@ public class Q05 {
             vetorString[i] += str.charAt(i);
         }
 
+        //Invertendo a string
         for(int i = 0; i <= tamStr / 2; i++){
             aux = vetorString[i];
             vetorString[i] = vetorString[tamStr - i];
             vetorString[tamStr - i] = aux;
         }
 
-        String newStr = "";
-
-        for(int i = 0; i <= tamStr; i++){
-            newStr += vetorString[i];
-        }
-
-        System.out.println(newStr);
-
-        return newStr;
+        System.out.println(vetorString);
     }
 }
